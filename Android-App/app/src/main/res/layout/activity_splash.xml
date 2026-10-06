@@ -1,0 +1,5 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent">
+<ImageView android:layout_width="500dp" android:layout_height="300dp" android:src="@drawable/app_background" android:layout_gravity="center" android:layout_marginTop="20dp"/>
+<TextView android:text="Smart Tourism Assistant" android:textSize="26sp" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+<TextView android:text="Air Quality and Emergency SOS" android:textSize="18sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+</LinearLayout>
