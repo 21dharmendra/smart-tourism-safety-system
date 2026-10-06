@@ -1,64 +1,118 @@
-Smart Tourist Safety System
+# 🚨 Smart Tourist Safety System
 
-Overview
-Smart Tourist Safety System is an IoT-based project developed for tourist safety in non-network areas. The system provides emergency SOS support, GPS location sharing, and air quality monitoring using ESP32, SIM800L, GPS, and Bluetooth communication.
+An IoT-based tourist safety system designed to provide **emergency SOS communication, GPS location sharing, and air-quality monitoring**, including support for low/no-network environments.
 
+## 📌 Project Overview
 
-Features
-- Emergency SOS Button
-- Bluetooth Communication
-- GPS Location Tracking
-- GSM Calling and SMS using SIM800L
-- Air Quality Monitoring (AQI)
-- Android Application Support
-- Works in Low/No Network Areas
+The system combines an **ESP32**, **SIM800L GSM module**, **NEO-6M GPS**, **MQ135 air-quality sensor**, Bluetooth communication, and an Android application.
 
+The Android app communicates with the ESP32 over Bluetooth. The ESP32 collects sensor/GPS information and can use the SIM800L module for emergency SMS/calling.
 
-Technologies Used
-- ESP32
-- SIM800L GSM Module
+## ✨ Features
+
+- 🆘 Emergency SOS
+- 📡 Bluetooth communication between Android and ESP32
+- 📍 GPS location tracking
+- 📞 GSM calling and SMS using SIM800L
+- 🌫️ Air-quality monitoring (AQI)
+- 📱 Android application
+- 🌐 Designed for low/no-network tourist areas
+
+## 🔧 Hardware
+
+- ESP32-WROOM-32
+- MQ135 Air Quality Sensor
 - NEO-6M GPS Module
+- SIM800L GSM Module
+- GSM Antenna
+- DHT22
+- Battery / power supply components
+
+## 💻 Software & Technologies
+
 - Android Studio
+- Java
+- XML
 - Arduino IDE
-- Bluetooth Communication
-- Java/XML
+- ESP32
+- Bluetooth Serial (SPP)
+- TinyGPSPlus
+- GSM AT Commands
 
+## 📂 Repository Structure
 
-Working
-1. User presses the SOS button in the Android app.
-2. Signal is sent to ESP32 through Bluetooth.
-3. ESP32 activates SIM800L module.
-4. Emergency SMS and call are sent.
-5. GPS location is shared with emergency contact.
+```
+smart-tourism-safety-system/
+├── Android-App/       # Android Studio source code
+├── Smart_tourist.ino  # ESP32 firmware
+├── STA.apk            # Android APK
+└── README.md
+```
 
+## 📱 Android Application
 
-Project Structure
-- ESP32 Arduino Code
-- Android Application
-- APK File
-- Circuit Diagram
-- Screenshots
+The Android application contains:
 
+- Splash screen
+- Main dashboard
+- Air Quality screen
+- Emergency SOS screen
+- Bluetooth communication with ESP32
+- GPS/location handling
 
-Applications
-- Tourist Safety
-- Emergency Communication
-- Women Safety
-- Trekking and Forest Areas
-- Remote Area Assistance
+### Android source code
 
+The complete source code is available in the **Android-App** directory.
 
-Future Scope
-- LoRa Communication
-- Cloud Data Monitoring
-- AI-based Emergency Detection
-- Live Location Tracking
-- Multi-language Support
+## 🔄 Working Flow
 
+```
+Android App
+     │
+     │ Bluetooth
+     ▼
+   ESP32
+   ┌──┼─────────────┐
+   │  │             │
+   ▼  ▼             ▼
+ MQ135 GPS        SIM800L
+   │  │             │
+   ▼  ▼             ▼
+ AQI Location   SMS / Call
+```
 
-Author
-Dharmesh Goswami
+## 🆘 SOS Workflow
 
+1. User opens the Emergency SOS screen.
+2. User enters the emergency contact number.
+3. The Android app obtains the location when available.
+4. SOS data is sent to the ESP32 through Bluetooth.
+5. ESP32 communicates with the SIM800L module.
+6. The GSM module sends the emergency message/call.
 
-Download APK
-- APK file is available in the APK folder.
+## 🌫️ Air Quality Workflow
+
+1. MQ135 provides an air-quality reading to ESP32.
+2. ESP32 processes the reading.
+3. ESP32 sends AQI and GPS data through Bluetooth.
+4. Android displays the AQI, status, latitude, longitude, and location name.
+
+## 📥 APK
+
+The compiled Android application is available as **STA.apk** in the repository.
+
+> The APK is provided for demonstration/testing. The Android source code is also included so the project can be inspected and developed further.
+
+## 🚀 Future Scope
+
+- LoRa-based communication
+- Cloud monitoring
+- AI-based emergency detection
+- Live location tracking
+- Multi-language support
+
+## 👨‍💻 Author
+
+**Dharmesh Goswami**
+
+BSc IT Final Year Project
