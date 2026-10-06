@@ -1,0 +1,1 @@
+<resources xmlns:tools="http://schemas.android.com/tools"><style name="Base.Theme.SmartTourist" parent="Theme.Material3.DayNight.NoActionBar"/><style name="Theme.SmartTourist" parent="Base.Theme.SmartTourist" /></resources>
